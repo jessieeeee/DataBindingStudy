@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <!--定义所需捆绑的变量，name变量名，type变量类型-->
+    <data>
+
+        <import type="com.jessie.databinding.study.base.dto.MyStringUtils" />
+
+        <variable
+            name="large"
+            type="boolean" />
+
+        <variable
+            name="testNormalDto"
+            type="com.jessie.databinding.study.base.dto.TestNormalDto" />
+
+        <variable
+            name="myStr"
+            type="String" />
+
+        <variable
+            name="myInt"
+            type="Integer" />
+
+        <variable
+            name="myDouble"
+            type="Double" />
+
+        <variable
+            name="myFloat"
+            type="Float" />
+
+        <variable
+            name="goodsName"
+            type="String" />
+
+        <variable
+            name="price"
+            type="int" />
+
+        <variable
+            name="includeTag"
+            type="String" />
+
+        <variable
+            name="isNormal"
+            type="boolean" />
+
+        <variable
+            name="height"
+            type="float" />
+
+        <variable
+            name="time"
+            type="java.util.Date" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{testNormalDto.test1}" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{testNormalDto.test2}" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{testNormalDto.test3}" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{myStr}" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{MyStringUtils.convert(myInt)}" />
+
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{MyStringUtils.convert(myDouble)}" />
+
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{MyStringUtils.convert(myFloat)}" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@{large? (int)@dimen/largePadding : (int)@dimen/smallPadding}"
+            android:text="@{@string/nameFormat(goodsName,price)}" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@{context.getApplicationInfo().toString()}" />
+        x
+
+        <ViewStub
+            android:id="@+id/view_stub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/inflate_content" />
+
+
+        <include
+            layout="@layout/include_content"
+            bind:includeTag="@{includeTag}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@{isNormal ? @color/colorPrimary : @color/colorAccent}"
+            android:gravity="center"
+            bind:custom="@{height}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{time}"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data >
+        <import type="com.jessie.databinding.study.base.dto.MyStringUtils">
+
+        </import>
+        <variable
+            name="observableBean"
+            type="com.jessie.databinding.study.base.dto.ObservableBean">
+
+        </variable>
+
+        <variable
+            name="observableImpBean"
+            type="com.jessie.databinding.study.base.dto.ObservableImpBean">
+
+        </variable>
+
+        <variable
+            name="observableObject"
+            type="com.jessie.databinding.study.base.dto.ObservableObject">
+
+        </variable>
+    </data>
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textObservable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{observableBean.test1}"/>
+
+    <EditText
+        android:id="@+id/editObservable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@={observableBean.test1}"/>
+
+
+    <TextView
+        android:id="@+id/textObservable1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{observableImpBean.test1}"/>
+
+    <EditText
+        android:id="@+id/editObservable1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@={observableImpBean.test1}"/>
+
+
+    <TextView
+        android:id="@+id/textObservable2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{observableObject.test1.get()}"/>
+
+    <TextView
+        android:id="@+id/textObservable3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{MyStringUtils.convert(observableObject.myInt)}"/>
+
+    <EditText
+        android:id="@+id/editObservable2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@={observableObject.test1.get()}"/>
+</LinearLayout>
+
+</layout>

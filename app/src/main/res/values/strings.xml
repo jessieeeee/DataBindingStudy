@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DataBindingStudy</string>
+    <string name="action_settings">Settings</string>
+    <string name="nameFormat">%1$s的价格是%2$d</string>
+</resources>
