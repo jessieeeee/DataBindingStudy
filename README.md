@@ -1229,7 +1229,5 @@ databinding的总结：
 
 缺点：错误提示很难定位，XML中数据捆绑的代码编辑提示不够智能。
 
-我已经把所有例子的完整代码打包上传，想查看demo源码的朋友，这里有传送门
-
 [0]:http://oqujmbgen.bkt.clouddn.com/databinding-Study.gif
 [1]:http://oqujmbgen.bkt.clouddn.com/databinding-Study.png
